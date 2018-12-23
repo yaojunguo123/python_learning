@@ -27,7 +27,7 @@ x = 0
 y = 0
 for i in range(0,len(all_image)):
 	try:
-		img = Image.open('image'+"/"+str(i)+".jpg")#打开之前获得的图片  该表尺寸 放到 img里面
+		img = Image.open('image'+"/"+str(i)+".jpg")#打开之前获得的图片  改变尺寸 放到 image里面
 		img = img.resize((each_size,each_size),Image.ANTIALIAS)
 		image.paste(img,(x*each_size,y*each_size))
 		x += 1
@@ -36,7 +36,7 @@ for i in range(0,len(all_image)):
 			y += 1
 	except:
 		pass
-image.save('image'+"/"+"all.jpg")#baocun
-itchat.send_image('image'+"/"+"all.jpg",'filehelper')  # 发送到文件传输助手
+image.save('image'+"/"+"all.jpg")#保存
+itchat.send_image('image'+"/"+"all.jpg",'filehelper')  # 发送到微信文件传输助手
 
 
